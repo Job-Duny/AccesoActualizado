@@ -1,0 +1,20 @@
+.form {
+	display: flex;
+	flex-direction: column; /* This is the default value */
+	justify-content: space-between;
+	padding: 1rem;
+	min-height: 30vh;
+}
+
+.input {
+	width: 100%;
+}
+
+/* para poner las clases debes poner .clase y luego en el archivo donde
+quieras usarla debes poner className={styles.clase}
+
+la nomenclatura para los archivos de css es nombre.module.css
+
+
+recuerda que cada archivo .tsx o .jsx de este proyecto tienes que importar 
+el archivo de css como import styles form "@/styles/nombre.module.css" */
