@@ -3,7 +3,7 @@ import styles from "@/styles/Form.module.css";
 import { useState } from "react";
 import QRCode from "qrcode";
 import axios from "axios";
-import { baseUrl, studentsApi } from "@/config/API";
+import { baseUrl, studentsApi } from "@/config/ROUTES";
 
 type Props = {};
 
@@ -32,7 +32,7 @@ export const Formi = (props: Props) => {
 		const data = Object.fromEntries(formData.entries());
 		console.log(data);
 
-		const res = await axios.post(`${studentsApi}`, {
+		const res = await axios.post(`${baseUrl}/api/students`, {
 			data: student,
 		});
 		// console.log(res);
@@ -123,10 +123,14 @@ export const Formi = (props: Props) => {
 					</button>
 				</form>
 			</div>
-			<img src={src}></img>
-			<a href={src} download={`accesso ${userTicket}`}>
-				Descagha tu qr!
-			</a>
+			{src && (
+				<>
+					<img src={src}></img>
+					<a href={src} download={`accesso ${userTicket}`}>
+						Descarga tu qr!
+					</a>
+				</>
+			)}
 		</>
 	);
 };

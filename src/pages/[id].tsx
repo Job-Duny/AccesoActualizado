@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
 import axios from "axios";
-import { studentsApi } from "@/config/API";
+import { studentsApi } from "@/config/ROUTES";
 import { DataUser } from "@/types/types";
 import { useRouter } from "next/router";
 
@@ -11,13 +11,13 @@ export default function id({
 		data: DataUser;
 	};
 }) {
-	console.log(student?.data.usuUsername);
+	//	console.log(student?.data.usuUsername);
 
 	const router = useRouter();
 
 	const handleDelete = async (id: number) => {
 		await axios.delete(`${studentsApi}/${id}`);
-		router.push("/");
+		await router.push("/");
 	};
 
 	return (

@@ -1,9 +1,10 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { Formi } from "@/components/form";
+import QrGen from "@/components/qrgen";
 import { GetServerSideProps } from "next";
 import axios from "axios";
-import { studentsApi } from "@/config/API";
+import { studentsApi } from "@/config/ROUTES";
 import { DataUser } from "@/types/types";
 import { useState } from "react";
 import Link from "next/link";
@@ -26,8 +27,7 @@ export default function Home({ students }: { students?: DataUser[] }) {
 			</Head>
 			<main className={styles.main}>
 				<h1 className={styles.title}>Generate</h1>
-				<Formi></Formi>
-
+				<QrGen></QrGen>
 				<h1
 					className={styles.title}
 					onClick={() => {
