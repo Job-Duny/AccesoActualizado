@@ -23,3 +23,10 @@ const pool = createPool({
 })
 
 export { pool };
+
+//mysql://root:whuzpMHVMf5MHaOt5vvh@containers-us-west-114.railway.app:7507/railway
+//railway
+//containers-us-west-114.railway.app
+//whuzpMHVMf5MHaOt5vvh
+//7507
+//root
